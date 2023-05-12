@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+
+  name: {{ include "resourceservice.fullname" . }}
+data:
+  conf.yaml: |
+    nacos:
+      url: "192.168.239.4"
+      port: 8848
+      namespace: "1c52cb46-75c8-4cb5-9c7f-22a9a3204760"
+    server:
+      port: 9666
+    jaeger:
+      url: "http://127.0.0.1:14268/api/traces"
+      localAgentHostPort: "localhost:6831"
+
